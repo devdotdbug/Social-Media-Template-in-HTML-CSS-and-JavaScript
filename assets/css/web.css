@@ -1,0 +1,1313 @@
+@import './light.css';
+/* @import './dark.css'; */
+
+@font-face {
+    font-family: NCE;
+    src: url(/assets/libs/n-c-e-r/NotoColorEmoji-Regular.ttf);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-width: 1024px;
+    overflow-x: hidden;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+* { 
+    margin: 0;
+    box-sizing: border-box;
+}
+/***************************************************************************/
+body > .top-navigation {
+    width: 100%;
+    min-width: 768px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--major-color);
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 99;
+}
+body > .top-navigation > .left,
+body > .top-navigation > .right {
+    width: 70%;
+    padding: 8px;
+}
+body > .top-navigation > .left > ul,
+body > .top-navigation > .right > ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    white-space: nowrap;
+}
+body > .top-navigation > .left > ul li,
+body > .top-navigation > .right > ul li {
+    display: inline-block;
+    padding: 5px 8px;
+}
+body > .top-navigation > .left > ul .logo {
+    font-size: 1.2em;
+    color: var(--minor-color);
+    padding-right: 50px;
+}
+body > .top-navigation > .left > ul li .search {
+    display: inline-block;
+    background-color: var(--lite-color);
+    padding: 5px 8px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+body > .top-navigation > .left > ul li .search i {
+    font-size: 1.1em;
+    color: #909090;
+}
+body > .top-navigation > .left > ul li .search input {
+    border: none;
+    background-color: transparent;
+    padding: 5px 8px;
+    font-size: 0.9em;
+    color: var(--text-color)
+}
+body > .top-navigation > .left > ul li .search input:focus {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
+body > .top-navigation > .left > ul li a {
+    color: var(--text-color);
+    background-color: var(--lite-color);
+    color: #909090;
+    padding: 8px;
+    border-radius: 50%;
+    transition: .3s;
+}
+body > .top-navigation > .left > ul li a:hover {
+    background-color: var(--minor-color-lite);
+    color: var(--minor-color);
+}
+
+
+body > .top-navigation > .right { 
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: baseline;
+    padding-right: 15px;
+    white-space: nowrap;
+}
+body > .top-navigation > .right div {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+}
+body > .top-navigation > .right button {
+    background-color: transparent;
+    border: none;
+    color: var(--minor-color);
+    font-size: 1.1em;
+    cursor: pointer;
+    position: relative;
+    right: 8px;
+    margin-left: 8px;
+}
+body > .top-navigation > .right button:hover { color: var(--other-color); }
+body > .top-navigation > .right button.active { color: var(--other-color); }
+body > .top-navigation > .right button .notify {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    background-color: #f00;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+body > .top-navigation > .right .icon-button {
+    padding: 0;
+}
+body > .top-navigation > .right button .icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+}
+body > .top-navigation > .right button .icon img {
+    width: 100%;
+    transform: scale(1.4);
+}
+
+/**************************************************************/
+
+body > .left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    min-width: 200px;
+    height: 100%;
+    background-color: inherit;
+    padding: 15px;
+    padding-top: 80px;
+    overflow-y: auto;
+}
+body > .left ul {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+}
+body > .left ul {
+    border-bottom: 1px solid #ddd; 
+}
+body > .left ul:last-child {
+    border-bottom: none; 
+}
+body > .left ul li {
+    padding: 8px;
+}
+body > .left ul li:first-child {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #505050;
+}
+body > .left ul li a {
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px;
+    border-radius: 25px;
+    transition: .3s;
+}
+body > .left ul li a:hover {
+    text-decoration: underline;
+} 
+body > .left ul:first-child li a:hover {
+    background-color: var(--hover-color-2);
+    text-decoration: none;
+}
+body > .left ul:first-child li:first-child a { background-color: initial; }
+body > .left ul li a .icon {
+    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    margin-right: 8px;
+}
+body > .left ul:first-child li a .icon {
+    border-radius: 50%;
+}
+body > .left ul li a .icon img {
+    width: 100%;
+    transform: scale(1.2);
+}
+body > .left ul li a i {
+    font-size: 1.5em;
+    margin-right: 8px;
+    color: var(--minor-color);
+}
+body > .left ul:first-child li a i {
+    font-size: 1.5em;
+    margin-right: 8px;
+    color: var(--major-color);
+    background-color: var(--minor-color);
+    padding: 5px;
+    border-radius: 50%;
+}
+
+/**************************************************************************/
+
+body > .middle {
+    padding: 50px;
+    padding-top: 80px;
+    width: 50%;
+    margin: auto;
+    overflow: visible;
+}
+/*****************************************************************************/
+.box {
+    background-color: var(--major-color);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow-x: hidden;
+}
+/****************************************************************************/
+.scroll-x {
+    overflow-x: auto;
+}
+.scroll-x > .scroll-bar {
+    min-width: 100%;
+    white-space: nowrap;
+}
+/****************************************************************************/
+.stories {
+    width: 100%;
+}
+.stories::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.stories > .content {
+    position: relative;
+    display: inline-block;
+    width: calc(100% / 4.5);
+    background-color: var(--minor-color-lite);
+    height: 190px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.stories > .content > img {
+    width: 100%;
+    transform: scale(1.5);
+    transition: .3s;
+}
+.stories > .content:hover > img {
+    transform: scale(2);
+}
+.stories > .content > .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    background-image: radial-gradient(transparent, transparent, var(--hoop-color));
+    padding: 8px;
+    color: #f4f4f4;
+    font-size: 0.9em;
+    z-index: 1;
+}
+.stories > .content > .hero .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--major-color);
+    color: var(--minor-color);
+    font-size: 2em;
+}
+.stories > .content > .hero .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+
+
+/**********************************************************************/
+.create-post > .top { font-size: 0.9em; }
+.create-post > .top i { 
+    font-size: 1.5em; 
+    color: var(--minor-color);
+    padding: 4px;
+}
+.create-post > .middle {
+    padding-top: 5px;
+    white-space: nowrap;
+}
+.create-post > .middle .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.create-post > .middle .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.create-post > .middle button {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+    border: none;
+    padding: 8px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.create-post > .middle .post-box {
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 8px;
+}
+.create-post > .middle .post-box textarea {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    resize: none;
+    width: 90%;
+    color: var(--text-color);
+}
+.create-post > .middle .post-box textarea:focus {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
+.create-post > .bottom {
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.create-post > .bottom button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 8px 25px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.create-post > .bottom button:hover { text-decoration: underline; }
+.create-post > .bottom button i {
+    font-size: 1.5em;
+    color: var(--minor-color);
+}
+
+/******************************************************************/
+
+.news {
+    overflow: hidden;
+    background-color: var(--major-color);
+}
+.news > .top  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 0.9em;
+}
+.news > .top .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.news > .top .icon img {
+    width: 100%;
+    transform: scale(1.2);
+}
+.news > .top time {
+    color: #909090;
+    font-size: 0.8em;
+}
+.news > .middle {
+    padding: 15px;
+    font-size: 0.9em;
+    color: var(--text-color-2);
+}
+.news > .middle .photos {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.news > .middle.no-photo {
+    font-size: 1.5em;
+}
+.news > .middle .tag {
+    color: var(--minor-color);
+    text-decoration: underline;
+}
+.news > .middle .photos > .left {
+    width: 70%;
+}
+.news > .middle .photos > .right {
+    width: 30%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.news > .middle .photos .wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.news > .middle .photos > .right .wrap {
+    height: calc(230px / 2);
+}
+.news > .middle .photos > .left .wrap:first-child {
+    width: 100%;
+    height: 250px;
+}
+.news > .middle .photos .wrap img {
+    width: 100%;
+    position: relative;
+    transform: scale(1.4);
+}
+.news > .middle .photos > .left .wrap img {
+    top: -100px;
+} 
+.news > .bottom {
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+}
+.news > .bottom > .left,
+.news > .bottom > .right {
+    width: 50%;
+    position: relative;
+}
+.news > .bottom > .right { text-align: right; }
+.news > .bottom button {
+    background-color: transparent;
+    border: none;
+    font-size: 0.9em;
+    font-weight: 550;
+    cursor: pointer;
+    color: var(--text-color);
+}
+.news > .bottom button i {
+    font-size: 1em;
+}
+.news > .bottom > .left button i {
+    background-color: var(--minor-color);
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+} 
+.news > .bottom > .left button.read i { 
+    background-color: #f00;
+}
+.news > .bottom > .left .gig { 
+    position: relative; 
+    display: inline-block;
+}
+.news > .bottom > .left .gig .gigs {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: -50px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    background-color: var(--bg-color);
+    padding: 8px 5px;
+    border-radius: 15px;
+    font-size: 1em;
+    white-space: nowrap;
+    z-index: 5;
+}
+.news > .bottom > .left .gig:hover .gigs { display: inline-block; } 
+.news > .bottom > .left .gigs::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-color);
+    position: absolute;
+    left: 8px;
+    bottom: -8px;
+    z-index: -6;
+    box-shadow: -3px -3px 7px rgba(0,0,0,0.1);
+    transform: rotate(-120deg);
+}
+
+
+/******************************************************************/
+body > .right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    min-width: 200px;
+    height: 100%;
+    background-color: inherit;
+    padding-top: 80px;
+    padding-left: 50px;
+    overflow-y: auto;
+}
+body > .right > .sponsored {
+    padding: 8px;
+    max-width: 100%;
+}
+body > .right > .friend-request {
+    width: 100%;
+    padding: 8px;
+}
+body > .right > .friend-request .profile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 8px;
+}
+body > .right > .friend-request .profile .icon {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+body > .right > .friend-request .profile .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+body > .right > .friend-request .profile .content {
+    padding: 8px;
+    font-size: 0.8em;
+    position: relative;
+    width: 85%;
+}
+body > .right > .friend-request .profile .content time {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #606060;
+    font-weight: 600;
+}
+.button,
+body > .right > .friend-request .profile .content button {
+    background-color: var(--hover-color-2);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.button-major,
+body > .right > .friend-request .profile .content button:first-child {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+}
+.button:hover,
+body > .right > .friend-request .profile .content button:hover {
+    background-color: var(--other-color);
+}
+
+/******************************************************************/
+
+.notifications {
+    display: none;
+    background-color: var(--major-color);
+    position: fixed;
+    right: 15px;
+    top: 80px;
+    width: 320px;
+    height: 450px;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 200;
+}
+.notifications ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 0;
+    overflow-y: auto;
+}
+.notifications ul li {
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    position: relative;
+    top: -1px;
+    cursor: default;
+    transition: 0.3s;
+}
+.notifications ul li.date {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.notifications ul li:hover {
+    background-color: var(--hover-color-1);
+}
+.notifications ul li.date:hover {
+    background-color: transparent;
+}
+.notifications ul li .icon {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.notifications ul li .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.notifications ul li .content {
+    padding: 5px;
+    font-size: 0.8em;
+}
+.notifications ul li .content p {
+    padding: 5px 0;
+}
+.notifications ul li .content time {
+    font-size: 0.9em;
+    color: #505050;
+}
+
+
+/***********************************************************************/
+.chats {
+    display: none;
+    width: 70%;
+    min-width: 700px;
+    max-height: 480px;
+    height: 90%;
+    background-color: var(--major-color);
+    position: fixed;
+    right: 50px;
+    top: 80px;
+    border-radius: 5px;
+    padding: 0;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+    z-index: 100;
+}
+.chats > .top {
+    white-space: nowrap;
+    padding: 8px 15px;
+    border-bottom: 1px solid #ebebeb;
+}
+.chats > .top button {
+    background-color: transparent;
+    color: #606060;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+.chats > .top button.active {
+    background-color: var(--minor-color-lite);
+    color: var(--minor-color);
+}
+.chats > .bottom {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.chats > .bottom > .left {
+    width: 40%;
+    padding: 8px 0;
+}
+.chats > .bottom > .left > .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 8px;
+    padding-bottom: 15px;
+}
+.chats > .bottom > .left > .top .search {
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+}
+.chats > .bottom > .left > .top .search i {
+    font-size: 1em;
+    padding: 4px;
+}
+.chats > .bottom > .left > .top .search input {
+    border: none;
+    background-color: transparent;
+    width: 90%;
+    padding: 5px;
+    color: var(--text-color);
+}
+.chats > .bottom > .left > .top .search input:focus {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+.button-2,
+.chats > .bottom > .left > .top button {
+    border: 1px solid #ebebeb;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    padding: 4px 8px;
+    min-width: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.chats > .bottom > .left > .top button:hover,
+.chats > .bottom > .left > .top button.active {
+    background-color: var(--hover-color-1);
+    color: var(--text-color);
+}
+.chats > .bottom > .left > .bottom {
+    overflow-y: scroll;
+    padding: 15px 0;
+    height: 80%;
+    padding-bottom: 50px;
+}
+.chats > .bottom > .left > .bottom ul {
+    list-style-type: none;
+    padding: 0;
+}
+.chats > .bottom > .left > .bottom ul li {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.chats > .bottom > .left > .bottom ul .active,
+.chats > .bottom > .left > .bottom ul li:hover {
+    background-color: var(--hover-color-1);
+}
+.chats > .bottom > .left > .bottom ul li > .left {
+    width: 15%;
+}
+.chats > .bottom > .left > .bottom ul li > .left .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.chats > .bottom > .left > .bottom ul li > .left .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+
+.chats > .bottom > .left > .bottom ul li > .middle {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    color: #707070;
+    font-weight: 400;
+}
+.chats > .bottom > .left > .bottom ul li > .middle small {
+    display: block;
+    font-size: 0.7em;
+    color: #909090;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.chats > .bottom > .left > .bottom ul li > .right {
+    width: 20%;
+    font-size: 0.8em;
+    color: #707070;
+}
+
+
+
+.chats > .bottom > .right {
+    width: 60%;
+    border-left: 1px solid #ebebeb;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chats > .bottom > .right > .top {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    border-bottom: 1px solid #ebebeb;
+}
+.chats > .bottom > .right > .top > .left {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.chats > .bottom > .right > .top > .left .icon {
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.chats > .bottom > .right > .top > .left .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.chats > .bottom > .right > .top > .left b {
+    padding: 8px;
+    font-weight: 550;
+    color: #606060;
+}
+.chats > .bottom > .right > .top > .right {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+.chats > .bottom > .right > .middle {
+    height: 50%;
+    overflow-y: scroll;
+}
+.chats > .bottom > .right > .middle .messages {
+    list-style-type: none;
+    padding: 0;
+}
+.chats > .bottom > .right > .middle .messages li {
+    padding: 8px;
+}
+.chats > .bottom > .right > .middle .messages .time {
+    color: #909090;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 15px;
+}
+.chats > .bottom > .right > .middle .messages li .message .content {
+    background-color: var(--back-chat-color);
+    color: var(--text-color-2);
+    display: inline-block;
+    margin-bottom: 3px;
+    font-size: 0.9em;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif, NCE;
+    position: relative;
+}
+/****************************************************************/
+.chats > .bottom > .right > .middle .messages .left::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.chats > .bottom > .right > .middle .messages .left .message {
+    display: block;
+}
+.chats > .bottom > .right > .middle .messages .left .message::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.chats > .bottom > .right > .middle .messages .left .message .content {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    float: left;
+    max-width: 65%;
+} 
+.chats > .bottom > .right > .middle .messages .left .message:first-child .content {
+    border-top-left-radius: 15px;
+}
+.chats > .bottom > .right > .middle .messages .left .message:last-child .content {
+    border-bottom-left-radius: 15px;
+}
+/****************************************************************/
+.chats > .bottom > .right > .middle .messages .right::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.chats > .bottom > .right > .middle .messages .right .message {
+    display: block;
+}
+.chats > .bottom > .right > .middle .messages .right .message::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.chats > .bottom > .right > .middle .messages .right .message .content {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    float: right;
+    max-width: 65%;
+    background-color: var(--minor-color);
+    color: #fdfdfd;
+} 
+.chats > .bottom > .right > .middle .messages .right .message:first-child .content {
+    border-top-right-radius: 15px;
+}
+.chats > .bottom > .right > .middle .messages .right .message:last-child .content {
+    border-bottom-right-radius: 15px;
+}
+/***********************************************************************/
+.chats > .bottom > .right > .middle .messages li .message .content .like {
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+    background-color: var(--major-color);
+    border-radius: 15px;
+    color: var(--text-color);
+    padding: 4px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    font-size: 0.8em;
+}
+.chats > .bottom > .right > .middle .messages .left .message .content .like {
+    right: initial;
+    left: 0;
+}
+
+
+.chats > .bottom > .right > .bottom {
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}
+.chats > .bottom > .right > .bottom .text-area {
+    display: block;
+    border: 1px solid #ebebeb;
+    width: 100%;
+    padding: 8px;
+    padding-right: 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.chats > .bottom > .right > .bottom .text-area > .left {
+    width: auto;
+    padding-right: 4px;
+}
+.chats > .bottom > .right > .bottom .text-area > .left .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.chats > .bottom > .right > .bottom .text-area > .left .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.chats > .bottom > .right > .bottom .text-area > .right {
+    width: 95%;
+}
+.chats > .bottom > .right > .bottom .text-area > .right textarea {
+    border: none;
+    background-color: transparent;
+    padding: 4px;
+    resize: none;
+    width: 100%;
+    color: var(--text-color);
+}
+.chats > .bottom > .right > .bottom .text-area > .right textarea:focus {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.chats > .bottom > .right > .bottom .text-area > .right .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding: 5px;
+    text-align: right;
+}
+.chats > .bottom > .right > .bottom .text-area > .right .options button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    padding: 3px;
+    margin-left: 6px;
+    color: var(--text-color);
+}
+/******************************************************************************************/
+
+.user-profile-page {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-width: 1024px;
+    height: 100%;
+    background-color: var(--bg-color);
+    padding-top: 90px;
+    overflow-y: auto;
+    z-index: 80;
+}
+.user-profile-page > .content {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+.user-profile-page > .content > .left {
+    width: 70%;
+}
+.user-profile-page > .content > .left > .header {
+    background-color: var(--major-color);
+    width: 100%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.user-profile-page > .content > .left > .header > .background {
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 160px;
+    position: relative;
+}
+.user-profile-page > .content > .left > .header > .background > img {
+    width: 100%;
+    transform: scale(1.2);
+}
+.user-profile-page > .content > .left > .header > .background .edit {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: var(--major-color);
+    border: none;
+    border-radius: 50%;
+    padding: 5px 6px;
+    color: var(--minor-color);
+    cursor: pointer;
+}
+.user-profile-page > .content > .left > .header > .profile-photo-wrap {
+    position: relative;
+}
+.user-profile-page > .content > .left > .header > .profile-photo-wrap > .profile-photo {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--major-color);
+    border: 4px solid var(--major-color);
+    position: absolute;
+    top: -70px;
+    left: 20px;
+    z-index: 2;
+}
+.user-profile-page > .content > .left > .header > .profile-photo-wrap > .profile-photo > img {
+    width: 100%;
+    transform: scale(1.4);
+}
+.user-profile-page > .content > .left > .header > .info {
+    padding: 15px 20px;
+    color: var(--text-color);
+    position: relative;
+}
+.user-profile-page > .content > .left > .header > .info .edit {
+    position: absolute;
+    right: 15px;
+    top: -40px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.user-profile-page > .content > .left > .header > .info .user-name {
+    font-size: 1.5em;
+    font-weight: 510;
+}
+.user-profile-page > .content > .left > .header > .info .bio {
+    padding: 15px;
+    width: 50%;
+    text-align: center;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif, NCE;
+}
+.user-profile-page > .content > .left > .header > .info .location {
+    font-size: 0.8em;
+    color: #505050;
+}
+.user-profile-page > .content > .left > .header > .info .friends {
+    font-size: 0.8em;
+    padding: 4px;
+}
+.user-profile-page > .content > .left > .header > .info .friends a { 
+    color: var(--minor-color); 
+    text-decoration: underline;
+}
+.user-profile-page > .content > .left > .header > .info .buttons {
+    white-space: nowrap;
+}
+.user-profile-page > .content > .left > .header > .info .buttons button {
+    border: 1px solid var(--minor-color);
+    background-color: var(--major-color);
+    color: var(--minor-color);
+    border-radius: 10px;
+    padding: 3px 8px;
+    transition: .2s;
+}
+.user-profile-page > .content > .left > .header > .info .buttons button:hover {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+}
+.user-profile-page > .content > .left > .friends {
+    background-color: var(--major-color);
+    width: 100%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 15px;
+    white-space: nowrap;
+}
+.user-profile-page > .content > .left > .friends > .content {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.user-profile-page > .content > .left > .friends > .content .profile-photo {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-left: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.user-profile-page > .content > .left > .friends > .content .profile-photo img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.user-profile-page > .content > .left > .friends > .content .profile-photo .user-name {
+    display: inline-block;
+    position: absolute;
+    bottom: 3px;
+    left: 1px;
+    font-size: 0.7em;
+    color: var(--major-color);
+    text-shadow: 0px 0px 2px var(--text-color);
+    white-space: normal;
+    z-index: 2;
+}
+.user-profile-page > .content > .left > .friends > .content .profile-photo .text {
+    display: inline-block;
+    white-space: normal;
+    color: var(--minor-color);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 15px;
+}
+.user-profile-page > .content > .left > .buttons {
+    white-space: nowrap;
+    background-color: var(--major-color);
+    width: 100%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+.user-profile-page > .content > .left > .buttons button {
+    border: 1px solid var(--minor-color);
+    background-color: var(--major-color);
+    color: var(--minor-color);
+    border-radius: 10px;
+    padding: 3px 8px;
+    transition: .2s;
+}
+.user-profile-page > .content > .left > .buttons button:hover {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+}
+.user-profile-page > .content > .left > .posts {
+    background-color: transparent;
+    width: 100%;
+    /* box-shadow: 0px 0px 8px rgba(0,0,0,0.1); */
+    padding: 15px;
+    margin-top: 8px;
+}
+
+
+
+.user-profile-page > .content > .right {
+    width: 30%;
+    padding: 30px;
+}
+.user-profile-page > .content > .right .sponsored {
+    padding: 8px;
+    max-width: 100%;
+}
+.user-profile-page > .content > .right .friend-request {
+    width: 100%;
+    padding: 8px;
+}
+.user-profile-page > .content > .right .friend-request .profile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 8px;
+}
+.user-profile-page > .content > .right .friend-request .profile .icon {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.user-profile-page > .content > .right .friend-request .profile .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.user-profile-page > .content > .right .friend-request .profile .content {
+    padding: 8px;
+    font-size: 0.8em;
+    position: relative;
+    width: 85%;
+}
+.user-profile-page > .content > .right .friend-request .profile .content time {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #505050;
+    font-weight: 600;
+}
+.user-profile-page > .content > .right .friend-request .profile .content button {
+    background-color: #ddd;
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.user-profile-page > .content > .right .friend-request .profile .content button:first-child {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+}
+.user-profile-page > .content > .right .friend-request .profile .content button:hover {
+    background-color: var(--other-color);
+}
+/**************************************************************/

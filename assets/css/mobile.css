@@ -1,0 +1,1432 @@
+@import './light.css';
+/* @import './dark.css'; */
+
+@font-face {
+    font-family: NCE;
+    src: url(/assets/libs/n-c-e-r/NotoColorEmoji-Regular.ttf);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+* { 
+    margin: 0;
+    box-sizing: border-box;
+}
+button {
+    background-color: var(--minor-color);
+    color: var(--hover-color-1);
+    border: none;
+    padding: 8px;
+    white-space: nowrap;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+/***************************************************************************/
+body > .top-navigation {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--major-color);
+    background-color: var(--top-nav-bg);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    padding: 15px 8px;
+    z-index: 999;
+}
+body > .top-navigation > ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    perspective: 400px;
+}
+body > .top-navigation > ul li {
+    display: inline-block;
+    width: calc(100% / 3);
+    text-align: center;
+}
+body > .top-navigation > ul li:first-child { text-align: left; }
+body > .top-navigation > ul li:last-child { text-align: right; }
+
+body > .top-navigation > ul .logo {
+    font-size: 1.2em;
+    color: var(--minor-color);
+}
+body > .top-navigation > ul li a {
+    color: var(--text-color);
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 50%;
+    transition: .3s;
+    font-size: 1.5em;
+}
+body > .top-navigation  ul li a.active {
+    color: var(--minor-color);
+}
+
+
+/**************************************************************/
+
+body > .bottom-navigation {
+    position: fixed;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--major-color);
+    width: 100%;
+    padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 20px;
+    z-index: 1000;
+}
+body > .bottom-navigation > ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+body > .bottom-navigation > ul li {
+    padding: 0;
+    width: calc(100% / 4);
+    text-align: center;
+}
+body > .bottom-navigation > ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4em;
+    padding: 4px;
+    position: relative;
+}
+body > .bottom-navigation > ul li a.active { color: var(--minor-color); }
+body > .bottom-navigation  .notify {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    background-color: #f00;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: none;
+}
+/**************************************************************/
+
+.menu_navigation {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 105%;
+    min-width: 200px;
+    height: 100%;
+    background-color: inherit;
+    padding: 15px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    overflow-y: auto;
+    z-index: 50;
+}
+.menu_navigation ul {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+}
+.menu_navigation ul {
+    border-bottom: 1px solid #ddd; 
+}
+.menu_navigation ul:last-child {
+    border-bottom: none; 
+}
+.menu_navigation ul li {
+    padding: 8px;
+}
+.menu_navigation ul li:first-child {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #505050;
+}
+.menu_navigation ul li a {
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px;
+    border-radius: 25px;
+    transition: .3s;
+}
+.menu_navigation ul li a:hover {
+    text-decoration: underline;
+} 
+.menu_navigation ul:first-child li a:hover {
+    background-color: var(--hover-color-2);
+    text-decoration: none;
+}
+.menu_navigation ul:first-child li:first-child a { background-color: initial; }
+.menu_navigation ul li a .icon {
+    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.menu_navigation ul:first-child li a .icon {
+    border-radius: 50%;
+}
+.menu_navigation ul li a .icon img {
+    width: 100%;
+    transform: scale(1.2);
+}
+.menu_navigation ul li a i {
+    font-size: 1.5em;
+    margin-right: 8px;
+    color: var(--minor-color);
+}
+.menu_navigation ul:first-child li a i {
+    font-size: 1.5em;
+    margin-right: 8px;
+    color: var(--major-color);
+    background-color: var(--minor-color);
+    padding: 5px;
+    border-radius: 50%;
+}
+body > .top-navigation >  .notify {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    background-color: #f00;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+/**************************************************************************/
+
+.home {
+    padding: 5px;
+    padding-top: 80px;
+    width: 100%;
+    overflow: visible;
+}
+/*****************************************************************************/
+.box {
+    background-color: var(--major-color);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow-x: hidden;
+}
+/****************************************************************************/
+.scroll-x {
+    overflow-x: auto;
+}
+.scroll-x > .scroll-bar {
+    min-width: 100%;
+    white-space: nowrap;
+}
+/****************************************************************************/
+.stories {
+    width: 100%;
+}
+.stories::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.stories > .content {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    background-color: var(--minor-color-lite);
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.stories > .content > img {
+    width: 100%;
+    transform: scale(1.5);
+    transition: .3s;
+}
+.stories > .content:hover > img {
+    transform: scale(2);
+}
+.stories > .content > .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    background-image: radial-gradient(transparent, transparent, var(--hoop-color));
+    padding: 8px;
+    color: #f4f4f4;
+    font-size: 0.8em;
+    z-index: 1;
+}
+.stories > .content > .hero .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--major-color);
+    color: var(--minor-color);
+    font-size: 2em;
+}
+.stories > .content > .hero .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+
+
+/**********************************************************************/
+.create-post > .top { font-size: 0.9em; }
+.create-post > .top i { 
+    font-size: 1.5em; 
+    color: var(--minor-color);
+    padding: 4px;
+}
+.create-post > .middle {
+    padding-top: 5px;
+    white-space: nowrap;
+}
+.create-post > .middle .icon {
+    display: inline-block;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.create-post > .middle .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.create-post > .middle button {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+    border: none;
+    padding: 8px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.create-post > .middle .post-box {
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 8px;
+}
+.create-post > .middle .post-box textarea {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    resize: none;
+    width: 90%;
+    color: var(--text-color);
+}
+.create-post > .middle .post-box textarea:focus {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
+.create-post > .bottom {
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.create-post > .bottom button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.5em;
+    font-weight: 600;
+    padding: 8px 15px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.create-post > .bottom button:hover { text-decoration: underline; }
+.create-post > .bottom button i {
+    font-size: 2.2em;
+    color: var(--minor-color);
+}
+
+/******************************************************************/
+
+.news {
+    overflow: hidden;
+    background-color: var(--major-color);
+}
+.news > .top  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 0.9em;
+}
+.news > .top .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.news > .top .icon img {
+    width: 100%;
+    transform: scale(1.2);
+}
+.news > .top time {
+    color: #909090;
+    font-size: 0.8em;
+}
+.news > .middle {
+    padding: 15px;
+    font-size: 0.9em;
+    color: var(--text-color-2);
+}
+.news > .middle .photos {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.news > .middle.no-photo {
+    font-size: 1.5em;
+}
+.news > .middle .tag {
+    color: var(--minor-color);
+    text-decoration: underline;
+}
+.news > .middle .photos > .left {
+    width: 70%;
+}
+.news > .middle .photos > .right {
+    width: 30%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.news > .middle .photos .wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.news > .middle .photos > .right .wrap {
+    height: calc(160px / 2);
+}
+.news > .middle .photos > .left .wrap:first-child {
+    width: 100%;
+    height: 180px;
+}
+.news > .middle .photos .wrap img {
+    width: 100%;
+    position: relative;
+    transform: scale(1.4);
+}
+.news > .middle .photos > .left .wrap img {
+    top: -10px;
+} 
+.news > .bottom {
+    display: flex;
+    flex-direction: row;
+}
+.news > .bottom > .left,
+.news > .bottom > .right {
+    width: 75%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.news > .bottom > .right { 
+    text-align: right; 
+    width: 25%;
+}
+.news > .bottom button {
+    background-color: transparent;
+    border: none;
+    font-size: 0.7em;
+    font-weight: 550;
+    cursor: pointer;
+    color: var(--text-color);
+}
+.news > .bottom button i {
+    font-size: 1.2em;
+}
+.news > .bottom > .left button i {
+    background-color: var(--minor-color);
+    border-radius: 50%;
+    padding: 3px;
+    color: var(--major-color);
+} 
+.news > .bottom > .left button.read i { 
+    background-color: #f00;
+}
+.news > .bottom > .left .gig { 
+    position: relative; 
+    display: inline-block;
+}
+.news > .bottom > .left .gig .gigs {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: -50px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    background-color: var(--bg-color);
+    padding: 8px 5px;
+    border-radius: 15px;
+    font-size: 1em;
+    white-space: nowrap;
+    z-index: 5;
+}
+.news > .bottom > .left .gig:hover .gigs { display: inline-block; } 
+.news > .bottom > .left .gigs::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-color);
+    position: absolute;
+    left: 8px;
+    bottom: -8px;
+    z-index: -6;
+    box-shadow: -3px -3px 7px rgba(0,0,0,0.1);
+    transform: rotate(-120deg);
+}
+
+
+/******************************************************************/
+body > .right {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    min-width: 200px;
+    height: 100%;
+    background-color: inherit;
+    padding-top: 80px;
+    padding-left: 50px;
+    overflow-y: auto;
+}
+body > .right > .sponsored {
+    padding: 8px;
+    max-width: 100%;
+}
+body > .right > .friend-request {
+    width: 100%;
+    padding: 8px;
+}
+body > .right > .friend-request .profile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 8px;
+}
+body > .right > .friend-request .profile .icon {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+body > .right > .friend-request .profile .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+body > .right > .friend-request .profile .content {
+    padding: 8px;
+    font-size: 0.8em;
+    position: relative;
+    width: 85%;
+}
+body > .right > .friend-request .profile .content time {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #606060;
+    font-weight: 600;
+}
+.button,
+body > .right > .friend-request .profile .content button {
+    background-color: var(--hover-color-2);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.button-major,
+body > .right > .friend-request .profile .content button:first-child {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+}
+.button:hover,
+body > .right > .friend-request .profile .content button:hover {
+    background-color: var(--other-color);
+}
+
+/******************************************************************/
+
+.notifications {
+    display: block;
+    background-color: var(--major-color);
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 70px;
+    z-index: 200;
+}
+.notifications ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 0;
+    overflow-y: auto;
+}
+.notifications ul li {
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    position: relative;
+    top: -1px;
+    cursor: default;
+    transition: 0.3s;
+}
+.notifications ul li.date {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.notifications ul li:hover {
+    background-color: var(--hover-color-1);
+}
+.notifications ul li.date:hover {
+    background-color: transparent;
+}
+.notifications ul li .icon {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.notifications ul li .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.notifications ul li .content {
+    padding: 5px;
+    font-size: 0.8em;
+}
+.notifications ul li .content p {
+    padding: 5px 0;
+}
+.notifications ul li .content time {
+    font-size: 0.9em;
+    color: #505050;
+}
+
+
+/***********************************************************************/
+.chats {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--major-color);
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    padding: 0;
+    padding-top: 60px;
+    padding-bottom: 100px;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 998;
+}
+.chats > .top {
+    white-space: nowrap;
+    padding: 8px 15px;
+    padding-bottom: 20px;
+    overflow-x: auto;
+}
+.chats > .top button {
+    background-color: transparent;
+    color: #606060;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+.chats > .top button.active {
+    background-color: var(--minor-color-lite);
+    color: var(--minor-color);
+}
+.chats > .bottom {
+    padding: 0;
+    height: 100%;
+}
+.chats > .bottom > .left {
+    width: 100%;
+    padding: 8px 0;
+    overflow-y: auto;
+}
+.chats > .bottom > .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 8px;
+    padding-bottom: 15px;
+}
+.chats > .bottom > .top .search {
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+}
+.chats > .bottom > .top .search i {
+    font-size: 1em;
+    padding: 4px;
+}
+.chats > .bottom > .top .search input {
+    border: none;
+    background-color: transparent;
+    width: 90%;
+    padding: 5px;
+    color: var(--text-color);
+}
+.chats > .bottom > .top .search input:focus {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+.button-2,
+.chats > .bottom > .top button {
+    border: 1px solid #ebebeb;
+    background-color: var(--hover-color-2);
+    color: var(--text-color);
+    border-radius: 4px;
+    padding: 4px 8px;
+    min-width: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.chats > .bottom > .top button:hover,
+.chats > .bottom > .top button.active {
+    background-color: var(--hover-color-1);
+    color: var(--text-color);
+}
+.chats > .bottom > .bottom {
+    padding: 15px 0;
+    height: auto;
+    padding-bottom: 50px;
+}
+.chats > .bottom > .bottom ul {
+    list-style-type: none;
+    padding: 0;
+}
+.chats > .bottom > .bottom ul li {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.chats > .bottom > .bottom ul .active,
+.chats > .bottom > .bottom ul li:hover {
+    background-color: var(--hover-color-1);
+}
+.chats > .bottom > .bottom ul li > .left {
+    width: 20%;
+}
+.chats > .bottom > .bottom ul li > .left .icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.chats > .bottom > .bottom ul li > .left .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+
+.chats > .bottom > .bottom ul li > .middle {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif, NCE;
+}
+.chats > .bottom > .bottom ul li > .middle small {
+    display: block;
+    font-size: 0.8em;
+    color: var(--text-color-2);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    font-weight: lighter;
+}
+.chats > .bottom > .bottom ul li > .middle small b {
+    font-weight: bold;
+    font-size: 1em;
+}
+.chats > .bottom > .bottom ul .noFriends {
+    display: block;
+    padding-top: 100px;
+    text-align: center;
+}
+.chats > .bottom > .bottom ul .noFriends button {
+    border: none;
+    background-color: var(--minor-color);
+    color: var(--bg-color);
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+.chats > .bottom > .bottom ul li > .right .new {
+    display: none;
+    color: #ffa500;
+    padding: 4px;
+    font-size: 1.5em;;
+}
+#people li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    position: relative;
+    margin-top: -1px;
+}
+#people li > .left {
+    width: 10%;
+}
+#people li > .left .icon {
+    width: 80px;
+    height: 80px;
+}
+#people li > .middle {
+    width: 30%;
+    font-size: 1em;
+}
+#people li > .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+}
+#people li > .right button {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+#people li > .right button:last-child {
+    background-color: var(--hover-color-2);
+    color: var(--text-color);
+}
+
+
+/*=============================*/
+.open-message {
+    background-color: var(--major-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2000;
+}
+
+.open-message > .top {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-bottom: 1px solid #ebebeb;
+}
+.open-message > .top > .left {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.open-message > .top > .left .icon {
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.open-message > .top > .left .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.open-message > .top > .left b {
+    padding: 8px;
+    font-weight: 550;
+    color: var(--text-color-2);
+}
+.open-message > .top > .right {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+}
+.open-message > .top > .right button {
+    width: auto;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color-2);
+    font-size: 1.4em;
+}
+
+
+.open-message > .middle {
+    height: 70%;
+    overflow-y: scroll;
+    padding-bottom: 90px;
+}
+.open-message > .middle .messages {
+    list-style-type: none;
+    padding: 0;
+}
+.open-message > .middle .messages li {
+    padding: 4px 6px;
+}
+.open-message > .middle .messages .time {
+    color: #909090;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 15px;
+}
+.open-message > .middle .messages li .message .content {
+    background-color: var(--back-chat-color);
+    color: var(--text-color-2);
+    display: inline-block;
+    margin-bottom: 3px;
+    font-size: 1em;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif, NCE;
+    position: relative;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+/****************************************************************/
+.open-message > .middle .messages .left::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.open-message > .middle .messages .left .message {
+    display: block;
+}
+.open-message > .middle .messages .left .message::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.open-message > .middle .messages .left .message .content {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    float: left;
+    max-width: 65%;
+} 
+.open-message > .middle .messages .left .message:first-child .content {
+    border-top-left-radius: 15px;
+}
+.open-message > .middle .messages .left .message:last-child .content {
+    border-bottom-left-radius: 15px;
+}
+/****************************************************************/
+.open-message > .middle .messages .right::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.open-message > .middle .messages .right .message {
+    display: block;
+}
+.open-message > .middle .messages .right .message::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.open-message > .middle .messages .right .message .content {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    float: right;
+    max-width: 65%;
+    background-color: var(--minor-color);
+    color: #fdfdfd;
+} 
+.open-message > .middle .messages .right .message:first-child .content {
+    border-top-right-radius: 15px;
+}
+.open-message > .middle .messages .right .message:last-child .content {
+    border-bottom-right-radius: 15px;
+}
+/***********************************************************************/
+.open-message > .middle .messages li .message .content .like {
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+    background-color: var(--major-color);
+    border-radius: 15px;
+    color: var(--text-color);
+    padding: 4px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    font-size: 0.9em;
+    z-index: 3;
+}
+.open-message > .middle .messages .left .message .content .like {
+    right: initial;
+    left: 0;
+}
+
+
+.open-message > .bottom {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--major-color);
+}
+.open-message > .bottom .text-area {
+    display: block;
+    border: 1px solid #ebebeb;
+    width: 100%;
+    padding: 8px;
+    padding-right: 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.open-message > .bottom .text-area > .left {
+    width: auto;
+    padding-right: 4px;
+}
+.open-message > .bottom .text-area > .left .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.open-message > .bottom .text-area > .left .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.open-message > .bottom .text-area > .right {
+    width: 95%;
+}
+.open-message > .bottom .text-area > .right textarea {
+    border: none;
+    background-color: transparent;
+    padding: 4px;
+    resize: none;
+    width: 100%;
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif, NCE;
+    font-size: 100%;
+    transition: 0.3s;
+}
+.open-message > .bottom .text-area > .right textarea:focus {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.open-message > .bottom .text-area > .right .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    overflow-x: auto;
+    width: 100%;
+    white-space: nowrap;
+}
+.open-message > .bottom .text-area > .right .options:first-child { justify-content: flex-start; }
+.open-message > .bottom .text-area > .right .options button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 6px;
+    color: var(--text-color);
+}
+.open-message > .bottom .text-area > .right .options span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: hidden;
+    padding: 0;
+}
+.open-message > .bottom .text-area > .right .options span.chatGigs {
+    width: 0%;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+/******************************************************************************************/
+
+.user-profile-page {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    padding-top: 90px;
+    overflow-y: auto;
+    z-index: 99;
+}
+.user-profile-page > .content {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.user-profile-page > .content > .left {
+    width: 100%;
+}
+.user-profile-page > .content > .left > .header {
+    background-color: var(--major-color);
+    width: 100%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.user-profile-page > .content > .left > .header > .background {
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 160px;
+    position: relative;
+}
+.user-profile-page > .content > .left > .header > .background > img {
+    width: 100%;
+    transform: scale(1.2);
+}
+.user-profile-page > .content > .left > .header > .background .edit {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: var(--major-color);
+    border: none;
+    border-radius: 50%;
+    padding: 5px 6px;
+    color: var(--minor-color);
+    cursor: pointer;
+}
+.user-profile-page > .content > .left > .header > .profile-photo-wrap {
+    position: relative;
+}
+.user-profile-page > .content > .left > .header > .profile-photo-wrap > .profile-photo {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--major-color);
+    border: 4px solid var(--major-color);
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    z-index: 2;
+}
+.user-profile-page > .content > .left > .header > .profile-photo-wrap > .profile-photo > img {
+    width: 100%;
+    transform: scale(1.4);
+}
+.user-profile-page > .content > .left > .header > .info {
+    padding: 15px 20px;
+    color: var(--text-color);
+    position: relative;
+}
+.user-profile-page > .content > .left > .header > .info .edit {
+    position: absolute;
+    right: 15px;
+    top: -40px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.user-profile-page > .content > .left > .header > .info .user-name {
+    font-size: 1.5em;
+    font-weight: 510;
+}
+.user-profile-page > .content > .left > .header > .info .bio {
+    padding: 15px;
+    width: 70%;
+    text-align: center;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif, NCE;
+}
+.user-profile-page > .content > .left > .header > .info .location {
+    font-size: 0.8em;
+    color: #505050;
+}
+.user-profile-page > .content > .left > .header > .info .friends {
+    font-size: 0.8em;
+    padding: 8px 4px;
+}
+.user-profile-page > .content > .left > .header > .info .friends a { 
+    color: var(--minor-color); 
+    text-decoration: underline;
+}
+.user-profile-page > .content > .left > .header > .info .buttons {
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+.user-profile-page > .content > .left > .header > .info .buttons button {
+    border: 1px solid var(--minor-color);
+    background-color: var(--major-color);
+    color: var(--minor-color);
+    border-radius: 10px;
+    padding: 3px 8px;
+    transition: .2s;
+}
+.user-profile-page > .content > .left > .header > .info .buttons button:hover {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+}
+.user-profile-page > .content > .left > .friends {
+    background-color: var(--major-color);
+    width: 100%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 15px;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.user-profile-page > .content > .left > .friends > .content {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.user-profile-page > .content > .left > .friends > .content .profile-photo {
+    width: 80px;
+    min-width: 80px;
+    height: 80px;
+    min-height: 80px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-left: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.user-profile-page > .content > .left > .friends > .content .profile-photo img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.user-profile-page > .content > .left > .friends > .content .profile-photo .user-name {
+    display: inline-block;
+    position: absolute;
+    bottom: 3px;
+    left: 1px;
+    font-size: 0.7em;
+    color: var(--major-color);
+    text-shadow: 0px 0px 2px var(--text-color);
+    white-space: normal;
+    z-index: 2;
+}
+.user-profile-page > .content > .left > .friends > .content .profile-photo .text {
+    display: inline-block;
+    white-space: normal;
+    color: var(--minor-color);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 15px;
+}
+.user-profile-page > .content > .left > .buttons {
+    white-space: nowrap;
+    background-color: var(--major-color);
+    width: 100%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.user-profile-page > .content > .left > .buttons button {
+    border: 1px solid var(--minor-color);
+    background-color: var(--major-color);
+    color: var(--minor-color);
+    border-radius: 10px;
+    padding: 3px 8px;
+    transition: .2s;
+}
+.user-profile-page > .content > .left > .buttons button:hover {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+}
+.user-profile-page > .content > .left > .posts {
+    background-color: transparent;
+    width: 100%;
+    /* box-shadow: 0px 0px 8px rgba(0,0,0,0.1); */
+    padding: 15px;
+    margin-top: 8px;
+}
+
+
+
+.user-profile-page > .content > .right {
+    width: 100%;
+    padding: 15px;
+}
+.user-profile-page > .content > .right .sponsored {
+    padding: 8px;
+    max-width: 100%;
+}
+.user-profile-page > .content > .right .friend-request {
+    width: 100%;
+    padding: 8px;
+}
+.user-profile-page > .content > .right .friend-request .profile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 8px;
+}
+.user-profile-page > .content > .right .friend-request .profile .icon {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.user-profile-page > .content > .right .friend-request .profile .icon img {
+    width: 100%;
+    transform: scale(1.3);
+}
+.user-profile-page > .content > .right .friend-request .profile .content {
+    padding: 8px;
+    font-size: 0.8em;
+    position: relative;
+    width: 85%;
+}
+.user-profile-page > .content > .right .friend-request .profile .content time {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #505050;
+    font-weight: 600;
+}
+.user-profile-page > .content > .right .friend-request .profile .content button {
+    background-color: var(--minor-color-lite);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.user-profile-page > .content > .right .friend-request .profile .content button:first-child {
+    background-color: var(--minor-color);
+    color: var(--major-color);
+}
+.user-profile-page > .content > .right .friend-request .profile .content button:hover {
+    background-color: var(--other-color);
+}
+/**************************************************************/
+.loading {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--hover-color-1);
+    border-bottom: 5px solid var(--minor-color);
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 40vh;
+    animation: loading 1s infinite;
+}
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        display: block;
+        width: 400px !important;
+        margin: auto;
+        max-width: 100%;
+    }
+}

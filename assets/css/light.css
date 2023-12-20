@@ -1,0 +1,31 @@
+:root {
+    /**********light****************/
+    --body-color: #fff;
+    --major-color: #fff;
+    --minor-color: #3cb371;
+    --minor-color-lite: #b6f1b6;
+    --bg-color: #fffafa;
+    --text-color: #111;
+    --text-color-2: #505050;
+    --other-color: #324c7e;
+    --hover-color-1: #f3f3f3;
+    --hover-color-2: #f3f3f3;
+    --lite-color: #e9e8e8;
+    --back-chat-color: #ddd;
+    --hoop-color: #000;
+    --top-nav-bg: rgba(255,255,255,0.5);
+    /**********Dark****************/
+    /* --body-color: #000;
+    --major-color: #111;
+    --minor-color: #3cb371;
+    --minor-color-lite: #b6f1b6;
+    --bg-color: #000;
+    --text-color: #fff;
+    --text-color-2: #ddd;
+    --other-color: #324c7e;
+    --hover-color-1: #000;
+    --hover-color-2: #111;
+    --lite-color: #000;
+    --back-chat-color: #000;
+    --hoop-color: #111; */
+}

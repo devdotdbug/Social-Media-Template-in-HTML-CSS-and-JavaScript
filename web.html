@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Xple</title>
+    <link rel="stylesheet" type="text/css" href="/assets/libs/bootstrap/bootstrap-icons.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/web.css"/>
+    <link preload="/assets/libs/n-c-e-r/NotoColorEmoji-Regular.ttf" as="text/css"/>
+</head>
+<body>
+    <nav class="top-navigation">
+        <div class="left">
+            <ul>
+                <li class="logo"> <b>Xple</b> </li>
+                <li>
+                    <form class="search" method="post" action="/">
+                        <i class="bi bi-search"></i>
+                        <input type="search" name="search" placeholder="Search xple"/>
+                    </form>
+                </li>
+                <li> <a href="javascript:void(0)" onclick="hideProfile();"> <i class="bi bi-house-heart"></i> </a> </li>
+                <li> <a href="javascript:void(0)" onclick="openChats();"> <i class="bi bi-chat-heart"></i> </a> </li>
+                <li> <a href="javascript:void(0)" onclick="profile(this);"> <i class="bi bi-person"></i> </a> </li>
+                <li> <a href="javascript:void(0)"> <i class="bi bi-calendar-check"></i> </a> </li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <div>
+                <button title="Notifications" onclick="notifications(this);"> <i class="bi bi-bell"></i> <span class="notify"></span> </button>
+                <button title="Chats" onclick="openChats(this);"> <i class="bi bi-chat"></i> </button>
+                <button title="Settings"> <i class="bi bi-gear"></i> </button>
+                <button title="Profile" class="icon-button" onclick="profile();">
+                    <span class="icon">
+                        <img src="/assets/images/0 (3).jpg" alt="Icon" width="20"/>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <aside class="left">
+        <ul>
+            <li> 
+                <a href="javascript:void(0)" onclick="profile();">
+                    <span class="icon"> <img src="/assets/images/0 (3).jpg" alt="icon" width="20"/> </span>
+                    <b>Queen Patra</b>
+                </a> 
+            </li>
+            <li> <a href="javascript:void(0)"> <i class="bi bi-people"></i> <b>Friends</b> </a> </li>
+            <li> <a href="javascript:void(0)"> <i class="bi bi-stack"></i> <b>Communities</b> </a> </li>
+            <li> <a href="javascript:void(0)"> <i class="bi bi-collection-play"></i> <b>Reels</b> </a> </li>
+        </ul>
+
+        <ul>
+            <li> Your communities </li>
+            <li> 
+                <a href="javascript:void(0)">
+                    <span class="icon"> <img src="/assets/images/0 (6).jpg" alt="icon" width="30px"/> </span>
+                    <b>America dating girls</b>
+                </a> 
+            </li>
+            
+            <li> 
+                <a href="javascript:void(0)">
+                    <span class="icon"> <img src="/assets/images/0 (2).jpg" alt="icon" width="30px"/> </span>
+                    <b>Dimples</b>
+                </a> 
+            </li>
+            
+            <li> 
+                <a href="javascript:void(0)">
+                    <span class="icon"> <img src="/assets/images/320978636_494102062861361_3092483528279137719_n.jpg" alt="icon" width="30px"/> </span>
+                    <b>Memes</b>
+                </a> 
+            </li>
+        </ul>
+
+        <ul>
+            <li> <a href="javascript:void(0)"> <i class="bi bi-gear"></i> <b>Settings</b> </a> </li>
+            <li> <a href="javascript:void(0)"> <i class="bi bi-question-circle"></i> <b>Help</b> </a> </li>
+            <li> <a href="javascript:void(0)"> <i class="bi bi-chat"></i> <b>Report something</b> </a> </li>
+        </ul>
+    </aside>
+    
+    <div class="middle">
+
+        <div class="box">
+
+            <div class="scroll-x">
+                
+                <div class="stories scroll-bar">
+    
+                    <div class="content">
+                        <!-- <img src="/assets/images/( 0)Samee gal.jpg" alt="image" width="50"/> -->
+                        <span class="hero">
+                            <span class="icon"> <i class="bi bi-plus"></i> </span>
+                            <b>Add story</b>
+                        </span>
+                    </div>
+                    
+                    <div class="content">
+                        <img src="/assets/images/0 (3).jpg" alt="image" width="50"/>
+                        <span class="hero">
+                            <span class="icon"> <img src="/assets/images/0 (3).jpg" alt="icon" width="30"/> </span>
+                            <b>Queen Patra</b>
+                        </span>
+                    </div>
+                    
+                    <div class="content">
+                        <img src="/assets/images/0 (5).jpg" alt="image" width="50"/>
+                        <span class="hero">
+                            <span class="icon"> <img src="/assets/images/0 (5).jpg" alt="icon" width="30"/> </span>
+                            <b>Jane Doe</b>
+                        </span>
+                    </div>
+                    
+                    <div class="content">
+                        <img src="/assets/images/272114704_103471805576876_1756994424724039945_n.jpg" alt="image" width="50"/>
+                        <span class="hero">
+                            <span class="icon"> <img src="/assets/images/272114704_103471805576876_1756994424724039945_n.jpg" alt="icon" width="30"/> </span>
+                            <b>Moses Henen</b>
+                        </span>
+                    </div>
+    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box create-post">
+            <div class="top">
+                <i class="bi bi-pencil-square"></i>
+                <b>Create post</b>
+            </div>
+            <div class="middle">
+                <form method="post" action="/" class="post-box">
+                    <span class="icon"> <img src="/assets/images/0 (3).jpg" alt="icon" width="20"/> </span>
+                    <textarea name="post" placeholder="What's happening" rows="5"></textarea>
+                    <span>
+                        <button>Post</button>
+                    </span>
+                </form>
+            </div>
+            <div class="bottom">
+                <button> <i class="bi bi-tag"></i> Tag others </button>
+                <button> <i class="bi bi-image"></i> Add photos </button>
+                <button> <i class="bi bi-emoji-expressionless"></i> Feeling/Activity </button>
+            </div>
+        </div>
+
+        <!-- ************************************** -->
+        <div class="box news">
+            <div class="top">
+                <span class="icon"> <img src="/assets/images/0 (8).jpg" alt="icon" width="30"/> </span>
+                <span>
+                    <b>Gbegbe Moses</b><br>
+                    <time>15 minutes ago</time>
+                </span>
+            </div>
+            <div class="middle">
+                <p>Hello World is a dummy text</p>
+                <div class="photos">
+                    <div class="left">
+                        <div class="wrap"> <img src="/assets/images/0 (2).jpg" alt="image" width="200"/> </div>
+                    </div>
+                    <div class="right">
+                        <div class="wrap"> <img src="/assets/images/0 (2).jpg" alt="image" width="200"/> </div>
+                        <div class="wrap"> <img src="/assets/images/0 (2).jpg" alt="image" width="200"/> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <span class="gig">
+                        <!-- <span class="gigs">
+                            <button class="gig"> <img src="/assets/images/3453454.png" alt="icon" width="30"/> </button>
+                            <button class="gig read"> <img src="/assets/images/2764000.png" alt="icon" width="30"/> </button>
+                            <button class="gig"> <img src="/assets/images/1f602.png" alt="icon" width="30"/></button>
+                            <button class="gig"> <img src="/assets/images/1f494.png" alt="icon" width="30"/> </button>
+                        </span> -->
+                        <button class="gig read"> <i class="bi bi-suit-heart"></i> 1.4k Gigs</button>
+                    </span>
+                    <button><i class="bi bi-chat"></i> 22 Comments</button>
+                </div>
+                <div class="right">
+                    <button><i class="bi bi-share"></i> Share</button>
+                </div>
+            </div>
+        </div>
+        <!-- ************************************** -->  
+        
+        
+        <!-- ************************************** -->
+        <div class="box news">
+            <div class="top">
+                <span class="icon"> <img src="/assets/images/272114704_103471805576876_1756994424724039945_n.jpg" alt="icon" width="30"/> </span>
+                <span>
+                    <b>John Doe</b><br>
+                    <time>2 days ago</time>
+                </span>
+            </div>
+            <div class="middle">
+                <p>hello dudes what's up</p>
+                <div class="photos">
+                    <div class="left">
+                        <div class="wrap"> <img src="/assets/images/0 (6).jpg" alt="image" width="200"/> </div>
+                    </div>
+                    <div class="right">
+                        <div class="wrap"> <img src="/assets/images/0 (5).jpg" alt="image" width="200"/> </div>
+                        <div class="wrap"> <img src="/assets/images/320978636_494102062861361_3092483528279137719_n.jpg" alt="image" width="200"/> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <span class="gig">
+                        <!-- <span class="gigs">
+                            <button class="gig"> <img src="/assets/images/3453454.png" alt="icon" width="30"/> </button>
+                            <button class="gig read"> <img src="/assets/images/2764000.png" alt="icon" width="30"/> </button>
+                            <button class="gig"> <img src="/assets/images/1f602.png" alt="icon" width="30"/></button>
+                            <button class="gig"> <img src="/assets/images/1f494.png" alt="icon" width="30"/> </button>
+                        </span> -->
+                        <button class="gig read"> <i class="bi bi-suit-heart"></i> 201k Gigs</button>
+                    </span>
+                    <button><i class="bi bi-chat"></i> 80 Comments</button>
+                </div>
+                <div class="right">
+                    <button><i class="bi bi-share"></i> Share</button>
+                </div>
+            </div>
+        </div>
+        <!-- ************************************** -->
+        
+        <!-- ************************************** -->
+        <div class="box news">
+            <div class="top">
+                <span class="icon"> <img src="/assets/images/320978636_494102062861361_3092483528279137719_n.jpg" alt="icon" width="30"/> </span>
+                <span>
+                    <b>Terzungwe Moses</b><br>
+                    <time>just now</time>
+                </span>
+            </div>
+            <div class="middle no-photo">
+                <p>John Doe is a freaking fucking programmer <a href="tag" class="tag">#programmer</a></p>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <span class="gig">
+                        <!-- <span class="gigs">
+                            <button class="gig"> <img src="/assets/images/3453454.png" alt="icon" width="30"/> </button>
+                            <button class="gig read"> <img src="/assets/images/2764000.png" alt="icon" width="30"/> </button>
+                            <button class="gig"> <img src="/assets/images/1f602.png" alt="icon" width="30"/></button>
+                            <button class="gig"> <img src="/assets/images/1f494.png" alt="icon" width="30"/> </button>
+                        </span> -->
+                        <button class="gig read"> <i class="bi bi-suit-heart"></i> 201k Gigs</button>
+                    </span>
+                    <button><i class="bi bi-chat"></i> 2 Comments</button>
+                </div>
+                <div class="right">
+                    <button><i class="bi bi-share"></i> Share</button>
+                </div>
+            </div>
+        </div>
+        <!-- ************************************** -->
+
+        <!--Notifications-->
+        <div class="box notifications" id="notifications">
+            <b>Notifications <i class="bi bi-bell-fill"></i></b>
+            <ul>
+                <li> 
+                    <span class="icon"> <img src="/assets/images/0 (7).jpg" alt="icon" width="20"/> </span>
+                    <span class="content">
+                        <p>Moses Doe sent you friend request</p>
+                        <time>2:44</time><br>
+                        <button class="button button-major">Accept</button>
+                        <button class="button">Delete</button>
+                    </span> 
+                </li>
+                <li> 
+                    <span class="icon"> <img src="/assets/images/0 (4).jpg" alt="icon" width="20"/> </span>
+                    <span class="content">
+                        <p>Queen Doe sent you friend request</p>
+                        <time>5:44</time><br>
+                        <button class="button button-major">Accept</button>
+                        <button class="button">Delete</button>
+                    </span> 
+                </li>
+                <li class="date"><time>27/05/2001</time></li>
+                <li> 
+                    <span class="icon"> <img src="/assets/images/0 (4).jpg" alt="icon" width="20"/> </span>
+                    <span class="content">
+                        <p>Queen Doe and 80 others gig on your post</p>
+                        <time>5:44</time><br>
+                    </span> 
+                </li>
+                <li> 
+                    <span class="icon"> <img src="/assets/images/0 (5).jpg" alt="icon" width="20"/> </span>
+                    <span class="content">
+                        <p>Jane Doe posted a new gig</p>
+                        <time>5:44</time><br>
+                    </span> 
+                </li>
+                <li> 
+                    <span class="icon"> <img src="/assets/images/0 (5).jpg" alt="icon" width="20"/> </span>
+                    <span class="content">
+                        <p>Jane Doe replied to your comment on John's post</p>
+                        <time>5:44</time><br>
+                    </span> 
+                </li>
+                <li> 
+                    <span class="icon"> <img src="/assets/images/0 (2).jpg" alt="icon" width="20"/> </span>
+                    <span class="content">
+                        <p>Jane posted some photos</p>
+                        <time>5:44</time><br>
+                    </span> 
+                </li>
+            </ul>
+        </div>
+
+        <!--Chats-->
+        <div class="box chats" id="chats">
+            <div class="top">
+                <button class="active">All messages</button>
+                <button>Requests</button>
+                <button>Achieved</button>
+                <button>blocked</button>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <div class="top">
+                        <form method="post" action="/" class="search">
+                            <i class="bi bi-search"></i>
+                            <input type="search" name="search" placeholder="Search"/>
+                        </form>
+                        <button>
+                            <i class="bi bi-arrow-down-up"></i>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </button>
+                    </div>
+                    <div class="bottom">
+                        <ul>
+                            <li>
+                                <div class="left">
+                                    <span class="icon"> <img src="/assets/images/0 (2).jpg" alt="icon" width="30"/> </span>
+                                </div>
+                                <div class="middle">
+                                    <p>Jane Doe</p>
+                                    <small><i class="bi bi-chat"></i> Hey dude</small>
+                                </div>
+                                <div class="right">
+                                    <time>2/5/2023</time>
+                                </div>
+                            </li>
+                            
+                            <li class="active">
+                                <div class="left">
+                                    <span class="icon"> <img src="/assets/images/0 (4).jpg" alt="icon" width="30"/> </span>
+                                </div>
+                                <div class="middle">
+                                    <p>Queen Patra</p>
+                                    <small><i class="bi bi-chat"></i> Did you came at party last night?</small>
+                                </div>
+                                <div class="right">
+                                    <time>2/5/2023</time>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="left">
+                                    <span class="icon"> <img src="/assets/images/0 (8).jpg" alt="icon" width="30"/> </span>
+                                </div>
+                                <div class="middle">
+                                    <p>John Doe</p>
+                                    <small><i class="bi bi-chat"></i> Bye!</small>
+                                </div>
+                                <div class="right">
+                                    <time>2/5/2023</time>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="left">
+                                    <span class="icon"> <img src="/assets/images/0 (3).jpg" alt="icon" width="30"/> </span>
+                                </div>
+                                <div class="middle">
+                                    <p>Queen Doe</p>
+                                    <small><i class="bi bi-chat"></i> I am won't be available.</small>
+                                </div>
+                                <div class="right">
+                                    <time>2/1/2023</time>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="left">
+                                    <span class="icon"> <img src="/assets/images/0 (5).jpg" alt="icon" width="30"/> </span>
+                                </div>
+                                <div class="middle">
+                                    <p>Lover Girl</p>
+                                    <small><i class="bi bi-chat"></i> Have a nice day!</small>
+                                </div>
+                                <div class="right">
+                                    <time>2/1/2023</time>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="left">
+                                    <span class="icon"> <img src="/assets/images/0 (6).jpg" alt="icon" width="30"/> </span>
+                                </div>
+                                <div class="middle">
+                                    <p>Judith Akor</p>
+                                    <small><i class="bi bi-chat"></i> Hello</small>
+                                </div>
+                                <div class="right">
+                                    <time>1/1/2023</time>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="top">
+                        <div class="left">
+                            <span class="icon"> <img src="/assets/images/0 (4).jpg" alt="icon" width="30"/> </span>
+                            <b>Queen Patra</b>
+                        </div>
+                        <div class="right">
+                            <button class="button-2" style="padding: 10px;"> <i class="bi bi-three-dots"></i> </button>
+                        </div>
+                    </div>
+
+                    <div class="middle">
+                        <ul class="messages">
+                            <li class="left">
+                                <div class="message">
+                                    <div class="content">
+                                        <p>Hey</p>
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <div class="content">
+                                        <p>Good morning!</p>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li class="right">
+                                <div class="message">
+                                    <div class="content">
+                                        <p>Good morning! How was your night dear?</p>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li class="time"><time>7/18/2023 11:8PM</time></li>
+
+                            <li class="left">
+                                <div class="message">
+                                    <div class="content">
+                                        <p>It was good, how was yours too?</p>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li class="right">
+                                <div class="message">
+                                    <div class="content">
+                                        <p>Mine was good😊💗</p>
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <div class="content">
+                                        <p>
+                                            Did you know about the new event
+                                            organizing called marathon? it's a very nice
+                                            event to be heard, please will you go to tge event??
+                                            you are been expected...
+                                        </p>
+                                        <span class="like">❤ 1</span>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li class="left">
+                                <div class="message">
+                                    <div class="content">
+                                        <p>Sure 👍</p>
+                                        <span class="like">❤ 1</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bottom">
+                        <form method="post" action="/" class="text-area">
+                            <div class="left">
+                                <span class="icon"> <img src="/assets/images/0 (4).jpg" alt="icon" width="20"/> </span>
+                            </div>
+                            <div class="right">
+                                <textarea name="text" rows="2" placeholder="Type message..."></textarea>
+                                <div class="options">
+                                    <button> <i class="bi bi-link-45deg"></i> </button>
+                                    <button> <i class="bi bi-mic"></i> </button>
+                                    <button> <i class="bi bi-heart-fill"></i> </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--*************************************************-->
+
+        <div class="user-profile-page" id="userProfilePage">
+            <div class="content">
+                <div class="left">
+                    <div class="header">
+                        <div class="background"> 
+                            <img src="/assets/images/_dev.jpg" alt="background image" width="100"/> 
+                            <button class="edit" title="Update"> <i class="bi bi-pen"></i> </button>
+                        </div>
+                        <div class="profile-photo-wrap">
+                            <div class="profile-photo"> <img src="/assets/images/0 (3).jpg" alt="photo" width="100"/> </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="info">
+                            <button class="edit"> <i class="bi bi-pen"></i> </button>
+                            <p class="user-name">Queen Patra</p>
+                            <p><small style="font-size: 0.7em;">BIO</small></p>
+                            <p class="bio"> Hey i'm a good and mostly a lovely sole 💗💕💝😚 </p>
+                            <p><small style="font-size: 0.7em;">INFO</small></p>
+                            <p class="location">Gboko, Benue State, Nigeria</p>
+                            <p class="friends"> <a href="#">44 friends</a> </p>
+                            <div class="buttons">
+                                <button>Edit profile</button>
+                                <button>Change profile photo</button>
+                                <button>Change background photo</button>
+                                <button>More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="friends">
+                        <p><small style="font-size: 0.7em;">FRIENDS</small></p>
+                        <div class="content">
+
+                            <div class="profile-photo">
+                                <img src="/assets/images/0 (4).jpg" alt="image" width="80"/> 
+                                <span class="user-name">Queen Patra</span>
+                            </div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/0 (7).jpg" alt="image" width="80"/> 
+                                <span class="user-name">Moses Henen</span>
+                            </div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/0 (2).jpg" alt="image" width="80"/> 
+                                <span class="user-name">Jane Doe</span>
+                            </div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/0 (5).jpg" alt="image" width="80"/> 
+                                <span class="user-name">Felicia Licia</span>
+                            </div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/0 (6).jpg" alt="image" width="80"/> 
+                                <span class="user-name">Esther Akor</span>
+                            </div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/0 (8).jpg" alt="image" width="80"/> 
+                                <span class="user-name">John Doe</span>
+                            </div>
+                            <div class="profile-photo">
+                                <span class="text">See all friends</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button>My friends</button>
+                        <button>Friend requests</button>
+                        <button>Sent requests</button>
+                        <button>My photos</button>
+                        <button>My posts</button>
+                    </div>
+
+                    <div class="posts">
+                        <p><small style="font-size: 0.7em;">MY POSTS</small></p><br/>
+                        <div class="content">
+
+                            <!-- ************************************** -->
+                            <div class="box news">
+                                <div class="top">
+                                    <span class="icon"> <img src="/assets/images/272114704_103471805576876_1756994424724039945_n.jpg" alt="icon" width="30"/> </span>
+                                    <span>
+                                        <b>John Doe</b><br>
+                                        <time>2 days ago</time>
+                                    </span>
+                                </div>
+                                <div class="middle">
+                                    <p>hello dudes what's up</p>
+                                    <div class="photos">
+                                        <div class="left">
+                                            <div class="wrap"> <img src="/assets/images/0 (6).jpg" alt="image" width="200"/> </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="wrap"> <img src="/assets/images/0 (5).jpg" alt="image" width="200"/> </div>
+                                            <div class="wrap"> <img src="/assets/images/320978636_494102062861361_3092483528279137719_n.jpg" alt="image" width="200"/> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="left">
+                                        <span class="gig">
+                                            <!-- <span class="gigs">
+                                                <button class="gig"> <img src="/assets/images/3453454.png" alt="icon" width="30"/> </button>
+                                                <button class="gig read"> <img src="/assets/images/2764000.png" alt="icon" width="30"/> </button>
+                                                <button class="gig"> <img src="/assets/images/1f602.png" alt="icon" width="30"/></button>
+                                                <button class="gig"> <img src="/assets/images/1f494.png" alt="icon" width="30"/> </button>
+                                            </span> -->
+                                            <button class="gig read"> <i class="bi bi-suit-heart"></i> 201k Gigs</button>
+                                        </span>
+                                        <button><i class="bi bi-chat"></i> 80 Comments</button>
+                                    </div>
+                                    <div class="right">
+                                        <button><i class="bi bi-share"></i> Share</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ************************************** -->
+
+                        </div>
+                    </div>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+
+                <div class="right">
+
+                    <div class="sponsored">
+                        <h4>Sponsored</h4>
+                        <div class="content">
+                            <img src="/assets/images/fgg.PNG" width="100%" alt="image"/>
+                        </div>
+                    </div>
+            
+                    <div class="friend-request">
+                        <h5>Friend requests</h5>
+                        <div>
+                            
+                            <div class="profile">
+                                <span class="icon"> <img src="/assets/images/0 (7).jpg" alt="icon" width="30"/> </span>
+                                <span class="content">
+                                    <b>Moses Doe</b><br>
+                                    <small>3 mutual friends</small>
+                                    <time>4d</time>
+                                    <div>
+                                        <button>Accept</button>
+                                        <button>Delete</button>
+                                    </div>
+                                </span>
+                            </div>
+                            
+                            <div class="profile">
+                                <span class="icon"> <img src="/assets/images/0 (4).jpg" alt="icon" width="30"/> </span>
+                                <span class="content">
+                                    <b>Queen Doe</b><br>
+                                    <small>19 mutual friends</small>
+                                    <time>2d</time>
+                                    <div>
+                                        <button>Accept</button>
+                                        <button>Delete</button>
+                                    </div>
+                                </span>
+                            </div>
+            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <!--************************************************************-->
+    <aside class="right">
+        <div class="sponsored">
+            <h4>Sponsored</h4>
+            <div class="content">
+                <img src="/assets/images/fgg.PNG" width="100%"/>
+            </div>
+        </div>
+
+        <div class="friend-request">
+            <h5>Friend requests</h5>
+            <div>
+                
+                <div class="profile">
+                    <span class="icon"> <img src="/assets/images/0 (7).jpg" alt="icon" width="30"/> </span>
+                    <span class="content">
+                        <b>Moses Doe</b><br>
+                        <small>3 mutual friends</small>
+                        <time>4d</time>
+                        <div>
+                            <button>Accept</button>
+                            <button>Delete</button>
+                        </div>
+                    </span>
+                </div>
+                
+                <div class="profile">
+                    <span class="icon"> <img src="/assets/images/0 (4).jpg" alt="icon" width="30"/> </span>
+                    <span class="content">
+                        <b>Queen Doe</b><br>
+                        <small>19 mutual friends</small>
+                        <time>2d</time>
+                        <div>
+                            <button>Accept</button>
+                            <button>Delete</button>
+                        </div>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+
+
+
+
+    <script src="/assets/js/web/show-gigs.js"></script>
+    <script src="/assets/js/web/notifications.js"></script>
+    <script src="/assets/js/web/chat.js"></script>
+    <script src="/assets/js/web/profile.js"></script>
+</body>
+</html>
